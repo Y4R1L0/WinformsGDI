@@ -25,8 +25,23 @@ namespace Lesson1
         private void button1_Click(object sender, EventArgs e)
         {
             counter++;
-            button1.Text = counter.ToString();
+            button1.Text = counter.ToString(); 
+            Random rnd = new Random(); 
+            int numX = rnd.Next(700);
+            int numY = rnd.Next(400);
+            button1.Location = new Point(numX, numY);
+        }
 
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+        Button b =sender as Button;
+            button1.BackColor = Color.Yellow;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            button1.BackColor = Color.Blue; 
         }
     }
 }
