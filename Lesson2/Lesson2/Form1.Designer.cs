@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelTime = new System.Windows.Forms.Label();
-            this.labelMilliesec = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -50,26 +49,16 @@
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "label1";
             // 
-            // labelMilliesec
-            // 
-            this.labelMilliesec.AutoSize = true;
-            this.labelMilliesec.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMilliesec.Location = new System.Drawing.Point(35, 105);
-            this.labelMilliesec.Name = "labelMilliesec";
-            this.labelMilliesec.Size = new System.Drawing.Size(125, 37);
-            this.labelMilliesec.TabIndex = 1;
-            this.labelMilliesec.Text = "label1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelMilliesec);
             this.Controls.Add(this.labelTime);
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
@@ -82,7 +71,6 @@
 
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelTime;
-        private System.Windows.Forms.Label labelMilliesec;
     }
 }
 

@@ -12,18 +12,15 @@ namespace Lesson2
 {
     public partial class Form1 : Form
     {
-        private static Timer vTimer=new Timer();
-        private void ShowTime(object vObj,EventArgs e)
-        {
-            labelTime.Text = DateTime.Now.ToLongTimeString();
-            labelMilliesec.Text = DateTime.Now.ToString("ffff");
-        }
+        DateTime timeStarted; 
         public Form1()
         {
-            InitializeComponent();
-            labelTime.Text = DateTime.Now.ToLongTimeString();
-            labelMilliesec.Text = DateTime.Now.ToString("ffff");
+            InitializeComponent(); 
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            timeStarted = DateTime.Now; 
+        } 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         { 
             Point? newLocation = null;
@@ -64,8 +61,8 @@ namespace Lesson2
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            labelTime.Text = DateTime.Now.ToString("hh.mm.ss.fff");
-            labelMilliesec.Text = DateTime.Now.ToString("ffff");
+            labelTime.Text = (DateTime.Now - timeStarted).ToString();
         }
+
     } 
 }
